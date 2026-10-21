@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#0b0d12">
+  <meta name="description" content="A calm, focused task tracker built with TypeScript.">
+  <title>Orbit Tasks · Your day, in motion</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <div class="ambient ambient-one"></div><div class="ambient ambient-two"></div>
+  <main class="app-shell">
+    <header class="topbar">
+      <a class="brand" href="#" aria-label="Orbit Tasks home"><span class="brand-mark">✳</span><span>orbit<span class="brand-light">/tasks</span></span></a>
+      <span class="local-tag"><span class="status-dot"></span> LOCAL WORKSPACE</span>
+    </header>
+
+    <section class="hero">
+      <p class="eyebrow">YOUR PERSONAL COMMAND CENTER</p>
+      <h1>Make room for<br><span>what matters.</span></h1>
+      <p class="hero-copy">One clear next step at a time. Add a task, keep your momentum, and watch the little wins stack up.</p>
+    </section>
+
+    <section class="task-panel" aria-label="Task manager">
+      <form id="task-form" class="composer">
+        <span class="plus-icon" aria-hidden="true">＋</span>
+        <label class="sr-only" for="title">New task</label>
+        <input id="title" name="title" type="text" maxlength="120" placeholder="What needs your attention?" autocomplete="off" required>
+        <button class="add-button" type="submit">Add task <span aria-hidden="true">↗</span></button>
+      </form>
+
+      <div class="list-heading">
+        <div><p class="eyebrow">YOUR WORKFLOW</p><h2>Task board <span id="task-count" class="count-pill">0</span></h2></div>
+        <p id="progress-copy" class="progress-copy">A fresh start.</p>
+      </div>
+
+      <nav class="filters" aria-label="Filter tasks">
+        <button class="filter-chip active" type="button" data-filter="all" aria-pressed="true">All <span id="count-all">0</span></button>
+        <button class="filter-chip" type="button" data-filter="todo" aria-pressed="false"><span class="filter-dot todo-dot"></span> To do <span id="count-todo">0</span></button>
+        <button class="filter-chip" type="button" data-filter="in-progress" aria-pressed="false"><span class="filter-dot progress-dot"></span> In progress <span id="count-progress">0</span></button>
+        <button class="filter-chip" type="button" data-filter="done" aria-pressed="false"><span class="filter-dot done-dot"></span> Done <span id="count-done">0</span></button>
+      </nav>
+
+      <ul id="task-list" class="task-list" aria-live="polite" aria-label="Tasks"></ul>
+      <div id="empty-state" class="empty-state">
+        <div class="empty-orbit"><span>✳</span></div>
+        <h3>Nothing on your radar.</h3>
+        <p>Add your first task above. Future-you says thanks.</p>
+      </div>
+      <footer class="panel-footer"><span><kbd>ENTER</kbd> to add a task</span><span>Built for steady progress <span class="sparkle">✦</span></span></footer>
+    </section>
+    <footer class="page-footer">ORBIT TASKS <span>·</span> SMALL STEPS, REAL MOMENTUM</footer>
+  </main>
+</body>
+</html>
